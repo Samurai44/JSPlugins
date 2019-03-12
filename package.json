@@ -1,5 +1,5 @@
 {
-  "name": "RPSgame",
+  "name": "JSPlugins",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -29,13 +29,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Samurai44/RPSgame.git"
+    "url": "git+https://github.com/Samurai44/JSPlugins.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Samurai44/RPSgame/issues"
+    "url": "https://github.com/Samurai44/JSPlugins/issues"
   },
-  "homepage": "https://github.com/Samurai44/RPSgame#readme"
+  "homepage": "https://github.com/Samurai44/JSPlugins#readme"
 }
