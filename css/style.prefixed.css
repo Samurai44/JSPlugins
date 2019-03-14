@@ -1,32 +1,40 @@
-
-
 .carousel-cell {
-  width: 100vw; /* full width */
-  height: 50vh; /* height of carousel */
+  width: 100vw;
+  /* full width */
+  height: 50vh;
+  /* height of carousel */
   max-height: 250px;
   margin: 10px auto;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
   background-position: center;
   background-size: cover;
-  .container {
+}
+
+.carousel-cell .container {
   width: 100%;
   max-width: 1200px;
   text-align: center;
   font-size: 30px;
-  }
 }
+
 .flickity-page-dots {
   display: none;
 }
+
 .progress-bar {
   height: 20px;
   width: 0;
   background: #6E814E;
 }
+
 .buttonReset {
   position: fixed;
   top: 10px;
   left: 0;
 }
+/*# sourceMappingURL=style.prefixed.css.map */
