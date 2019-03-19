@@ -9,21 +9,6 @@
   </head>
   <body>
     <div class="main-carousel">
-      <div class="carousel-cell" id="carousel-cell1" style="background-image: url(https://images.pexels.com/photos/2007806/pexels-photo-2007806.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500)">
-        <div class="container">first</div>
-      </div>
-      <div class="carousel-cell" id="carousel-cell2" style="background-image: url(https://images.pexels.com/photos/2002571/pexels-photo-2002571.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500)">
-        <div class="container">second</div>
-      </div>
-      <div class="carousel-cell" id="carousel-cell3" style="background-image: url(https://images.pexels.com/photos/33041/antelope-canyon-lower-canyon-arizona.jpg?auto=compress&cs=tinysrgb&dpr=2&w=500)">
-      <div class="container">third</div>
-        </div>
-      <div class="carousel-cell" id="carousel-cell4" style="background-image: url(https://images.pexels.com/photos/1738990/pexels-photo-1738990.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500)">
-        <div class="container">fourth</div>
-      </div>
-      <div class="carousel-cell" id="carousel-cell5" style="background-image: url(https://images.pexels.com/photos/1998435/pexels-photo-1998435.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500)">
-        <div class="container">fifth</div>
-      </div>
     </div>
     <div class="progress-bar"></div>
     <div class="hashtags">
@@ -36,7 +21,46 @@
     <div class="button-group">
       <button class="buttonReset" id="reset">reset</button>
     </div>
-   <script src="/vendor/flickity.pkgd.min.js"></script>
-   <script src="/js/script.js"></script>
+    <script id="slider-cell" type="x-tmpl-mustache">
+      <div class="carousel-cell" id={{image}}>
+        <div class="container">
+          <h3> {{ title }} </h3>
+          {{{ description }}}
+        </div>
+      </div>
+    </script>
+    <script>
+      var sliderData = [
+        {
+          image: 'carousel-cell1',
+          title: 'mountains',
+          description: '<p>first</p> <img src="https://images.pexels.com/photos/2007806/pexels-photo-2007806.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" alt="mountains">',
+        },
+        {
+          image: 'carousel-cell2',
+          title: 'cliffs',
+          description: '<p>second</p> <img src="https://images.pexels.com/photos/2002571/pexels-photo-2002571.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" alt="cliffs">',
+        },
+        {
+          image: 'carousel-cell3',
+          title: 'canyon',
+          description: '<p>third</p> <img src="https://images.pexels.com/photos/33041/antelope-canyon-lower-canyon-arizona.jpg?auto=compress&cs=tinysrgb&dpr=2&w=500" alt="canyon">',
+        },
+        {
+          image: 'carousel-cell4',
+          title: 'city',
+          description: '<p>fourth</p> <img src="https://images.pexels.com/photos/1738990/pexels-photo-1738990.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" alt="city">',
+        },
+        {
+          image: 'carousel-cell5',
+          title: 'road',
+          description: '<p>fifth</p> <img src="https://images.pexels.com/photos/1998435/pexels-photo-1998435.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" alt="road">',
+        }
+      ]
+    </script>
+    <script src="/vendor/flickity.pkgd.min.js"></script>
+    <script src="/vendor/mustache.min.js"></script>
+    <script src="/js/script.js"></script>
   </body>
+
 </html>
