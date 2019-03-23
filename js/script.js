@@ -1,14 +1,6 @@
-var elem = document.querySelector('.main-carousel');
-var flkty = new Flickity( elem, {
-  // options
-  cellAlign: 'left',
-  contain: true
-});
-
-
 // carosuel made with mustache templates
 
-var mainCarousel = document.getElementsByClassName('main-carousel').innerHTML;
+var mainCarousel = document.querySelector('.main-carousel');
 var sliderCell = document.getElementById('slider-cell').innerHTML;
 
 Mustache.parse(sliderCell);
@@ -19,15 +11,17 @@ for (var i = 0; i < sliderData.length; i++){
   console.log(sliderData);
   listItems += Mustache.render(sliderCell, sliderData[i]);
 }
-
+console.log('mainCarousel', mainCarousel);
 mainCarousel.insertAdjacentHTML('beforeend', listItems);
 
 
 //Initialize flkty carosuel plugin
-
-var flkty = new Flickity( '.main-carousel', {
+var elem = document.querySelector('.main-carousel');
+var flkty = new Flickity( elem, {
   // options
-  hash: true,
+  cellAlign: 'left',
+  contain: true,
+  //hash: true
 });
 
 // Add progress bar for the carousel
@@ -53,3 +47,19 @@ buttonGroup.addEventListener( 'click', function( event ) {
   var index = buttons.indexOf( event.target );
   flkty.select( index );
 });
+
+var hashHrefs = document.querySelectorAll('.hashtags > a');
+
+for (i = 0; i < hashHrefs.length; ++i) {
+  hashHrefs[i].addEventListener('click', function (event) {
+    event.preventDefault();
+
+    var hrefAttr = event.target.getAttribute('href');
+    var slide = document.querySelector(hrefAttr);
+    var index = Array.from(slide.parentNode.children).indexOf(slide)
+
+    console.log('index', index);
+
+    flkty.select( index );
+  });
+}
