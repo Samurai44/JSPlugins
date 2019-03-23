@@ -37,4 +37,9 @@
   top: 10px;
   left: 0;
 }
+
+#map {
+  height: 50vh;
+  width: 100%;
+}
 /*# sourceMappingURL=style.prefixed.css.map */

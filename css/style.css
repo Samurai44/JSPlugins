@@ -35,4 +35,9 @@
   left: 0;
 }
 
+#map {
+  height: 50vh;
+  width: 100%;
+}
+
 /*# sourceMappingURL=style.css.map */

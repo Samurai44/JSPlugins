@@ -21,6 +21,7 @@
     <div class="button-group">
       <button class="buttonReset" id="reset">reset</button>
     </div>
+    <div id="map"></div>
     <script id="slider-cell" type="x-tmpl-mustache">
       <div class="carousel-cell" id={{image}}>
         <div class="container">
@@ -35,32 +36,38 @@
           image: 'carousel-cell1',
           title: 'mountains',
           description: '<p>first</p> <img src="https://images.pexels.com/photos/2007806/pexels-photo-2007806.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" alt="mountains">',
+          coords: {lat: 47.109750, lng: 11.680365},
         },
         {
           image: 'carousel-cell2',
           title: 'cliffs',
           description: '<p>second</p> <img src="https://images.pexels.com/photos/2002571/pexels-photo-2002571.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" alt="cliffs">',
+          coords: {lat: 35.671607, lng: -121.271047},
         },
         {
           image: 'carousel-cell3',
           title: 'canyon',
           description: '<p>third</p> <img src="https://images.pexels.com/photos/33041/antelope-canyon-lower-canyon-arizona.jpg?auto=compress&cs=tinysrgb&dpr=2&w=500" alt="canyon">',
+          coords: {lat: 38.735423, lng: -109.589756},
         },
         {
           image: 'carousel-cell4',
           title: 'city',
           description: '<p>fourth</p> <img src="https://images.pexels.com/photos/1738990/pexels-photo-1738990.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" alt="city">',
+          coords: {lat: 35.692988, lng: 139.705588},
         },
         {
           image: 'carousel-cell5',
           title: 'road',
           description: '<p>fifth</p> <img src="https://images.pexels.com/photos/1998435/pexels-photo-1998435.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" alt="road">',
+          coords: {lat: 49.283458, lng: 20.000198},
         }
       ]
     </script>
     <script src="/vendor/flickity.pkgd.min.js"></script>
     <script src="/vendor/mustache.min.js"></script>
     <script src="/js/script.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDIRWW8NayBBYPo7ZOIigfF5hAJr8l9h54&callback=initMap"></script>
   </body>
 
 </html>

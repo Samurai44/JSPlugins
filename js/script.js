@@ -63,3 +63,22 @@ for (i = 0; i < hashHrefs.length; ++i) {
     flkty.select( index );
   });
 }
+
+// Add MAP
+
+window.initMap = function(){
+  // The location of first slide
+  var hintertux = {lat: 47.109750, lng: 11.680365};
+  // The map, centered at the slide
+  var map = new google.maps.Map(
+      document.getElementById('map'), {
+        zoom: 4,
+        center: hintertux});
+// The marker, positioned at all places
+  for (var j = 0; j < sliderData.length; j++){
+        console.log(sliderData);
+        var marker = new google.maps.Marker({
+          position: sliderData[j].coords,
+          map: map});
+      }
+};
