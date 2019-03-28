@@ -74,11 +74,25 @@ window.initMap = function(){
       document.getElementById('map'), {
         zoom: 4,
         center: hintertux});
-// The marker, positioned at all places
+// Markers positioned at all places
   for (var j = 0; j < sliderData.length; j++){
-        console.log(sliderData);
+        console.log('slidedata', sliderData);
+
         var marker = new google.maps.Marker({
+          index: sliderData[j].no,
           position: sliderData[j].coords,
           map: map});
+
+
+//CO TU ZROBIC  ŻEBYM MÓGŁ KAŻDEMU Z OSOBNA PRZYPORZĄDKOWAĆ INDEX????
+
+
+        marker.addListener('click', function(event){
+
+        var index = marker.index;
+
+        flkty.select( index );
+       })
       }
+
 };
