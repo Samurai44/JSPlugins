@@ -21,7 +21,7 @@ var flkty = new Flickity( elem, {
   // options
   cellAlign: 'left',
   contain: true,
-  //hash: true
+  hash: true
 });
 
 // Add progress bar for the carousel
@@ -81,18 +81,27 @@ window.initMap = function(){
         var marker = new google.maps.Marker({
           index: sliderData[j].no,
           position: sliderData[j].coords,
-          map: map});
+          map: map,
+});
+// Connect carousel with click on markers
 
 
-//CO TU ZROBIC  ŻEBYM MÓGŁ KAŻDEMU Z OSOBNA PRZYPORZĄDKOWAĆ INDEX????
+        marker.addListener('click', (function(event){
 
-
-        marker.addListener('click', function(event){
-
-        var index = marker.index;
+        var index = this.index;
 
         flkty.select( index );
-       })
+      }).bind(marker))
       }
+
+// Center map on active slide
+
+
+
+      flkty.on( 'change', function(position) {
+
+      var position = sliderData[j].coords;
+      map.panTo(position)
+    })
 
 };
